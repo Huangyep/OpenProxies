@@ -1,6 +1,3 @@
-# 手动筛选可用的代理
-# 独立运行IPScreener,数据保存在path文件中
-# 可设置的属性：path,total,each_pool_total,pool_num_set,timeout
 import requests
 import config
 

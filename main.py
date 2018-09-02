@@ -18,7 +18,7 @@ if __name__ == "__main__":
         result.append(useful_proxies)
     pool.close()
     pool.join()
-    # 将较快的最后保存在data数组中，写入文件
+    # 将较快的代理保存在data数组中，写入文件
     for r in result:
         for proxy in r.get():
             data.append(proxy)
