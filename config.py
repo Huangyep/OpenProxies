@@ -3,9 +3,9 @@
 PATH = "myFile/"    # 所有代理和经过筛选的代理IP的保存路径
 SAVE_NAME = "all_ips.txt"   # 保存所有代理IP的文件名
 
-
 ### 筛选IP
 NAME = "useful_ips.txt" # 保存经过筛选的IP的文件名
+
 # 用多进程进行筛选
 POOL = 4    # 进程的个数
 EACH_POOL_TOTAL = 10  # 每个进程中取EACH_POOL个IP进行筛选

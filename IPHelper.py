@@ -1,7 +1,6 @@
 # 用来对保存IP的文件进行操作，对IP进行管理
 import json
 
-
 def get_useful_ips(path):
     """获取所有经过筛选的IP"""
     f = open(path, 'r')

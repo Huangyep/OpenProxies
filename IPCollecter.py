@@ -67,3 +67,27 @@ def get_ips(total=1):
         proxy = {'http':http,'https':https}  # 返回的每一个代理
         proxies.append(proxy)
     return proxies
+
+def get_all_ips():
+    """获取所有的代理，代理数量为min(http_proxies,https_proxies)"""
+    path = config.PATH + config.SAVE_NAME
+    if os.path.exists(path) == False:
+        print(path, "文件不存在")
+        return
+    f = open(path, 'r')
+    data = json.load(f)
+    f.close()
+    http_list = []
+    https_list = []
+    for i in range(len(data)):
+        if data[i]['type'] == 'http':
+            http_list.append('http://' + data[i]['host'] + ':' + str(data[i]['port']))
+        if data[i]['type'] == 'https':
+            https_list.append('https://' + data[i]['host'] + ':' + str(data[i]['port']))
+    proxies = []
+    print(len(http_list),len(https_list))
+    total = min(len(http_list),len(https_list))
+    for i in range(total):
+        proxy = {'http':http_list[i],'https':https_list[i]}
+        proxies.append(proxy)
+    return proxies
